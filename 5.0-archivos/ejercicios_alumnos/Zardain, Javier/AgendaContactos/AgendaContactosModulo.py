@@ -60,9 +60,9 @@ class AgendaContactos:
         for contacto in filter(lambda x:x.nombre[0:1].lower() == nombre.lower() and x.apellido[0:1].lower() == apellido.lower(),self.listaContactos):              
             listarContacto(contacto)
     def enviarMail(self):
-        Email.enviarMails(self.listaContactos)
+        Email.Email.enviarMails(self.listaContactos)
     def enviarMailsDespuesDe(self):
-        Email.enviarMails(filter(lambda x: int(x.fechaNacimiento.split("-")[2]) >= 1993), self.listaContactos)
+        Email.Email.enviarMails(filter(lambda x: int(x.fechaNacimiento.split("-")[2]) >= 1993), self.listaContactos)
     def edadDespuesDe10(self):
         for contacto in [x.nombre + " " + x.apellido + " " + str(int(age(x.fechaNacimiento))+10) for x in self.listaContactos]:              
             print(contacto)

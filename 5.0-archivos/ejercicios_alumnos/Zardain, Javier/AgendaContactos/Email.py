@@ -4,23 +4,19 @@ Created on 13/10/2016
 @author: javier_zardain
 '''
 import smtplib
-import email.mime.multipart
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def traerEmail():
-    em = email()
-    em.configurarMail(input("Ingrese su cuenta gmail: "), input("Ingrese su password: "))
-    return em
-
-def enviarMails(lista):
-        email =  traerEmail()
+class Email:
+    
+    @staticmethod
+    def enviarMails(lista):
+        email = Email()
+        email.configurarMail(input("Ingrese su cuenta gmail: "), input("Ingrese su password: "))
         resultados = {}
         for contacto in lista:
             resultados[contacto.email] = "SENT" if email.enviarMail(contacto.email) else "NOT SENT"
         print (resultados)
-
-class email:
     
     def configurarMail(self,remitente, ps):
         self.fromaddr = remitente

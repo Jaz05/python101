@@ -8,7 +8,7 @@ Created on Sep 10, 2016
 '''
 # -*- coding: utf-8 -*-
 
-import Contacto
+import sys
 from AgendaContactosModulo import AgendaContactos
 
 class MiClase:
@@ -26,26 +26,29 @@ class MiClase:
             print("8-Enviar mail despues de 1993")
             print("9-Edad de los contactos despues de 10 years")
             print("10-Cargar contactos de archivo txt")
+            print("11-Salir")
             opcion =int(input("Ingrese una opcion: "))
             if(opcion == 1):
                 agenda.agregarContacto()
-            if(opcion == 2):
+            elif(opcion == 2):
                 agenda.editarContacto()
-            if(opcion == 3):
+            elif(opcion == 3):
                 agenda.borrarContacto()
-            if(opcion == 4):
+            elif(opcion == 4):
                 agenda.mostrarContactos()
-            if(opcion == 5):
+            elif(opcion == 5):
                 agenda.mostrarContactosDespuesDe()
-            if(opcion == 6):
+            elif(opcion == 6):
                 agenda.buscarPorIniciales()  
-            if(opcion == 7):
+            elif(opcion == 7):
                 agenda.enviarMail()
-            if(opcion == 8):
+            elif(opcion == 8):
                 agenda.enviarMailsDespuesDe()
-            if(opcion == 9):
+            elif(opcion == 9):
                 agenda.edadDespuesDe10()
-            if(opcion == 10):
+            elif(opcion == 10):
                 agenda.cargarDeArchivoTxt()
+            elif(opcion == 11):
+                sys.exit()
 # QuA  si lo ponemos  "MiClase" debajo del main e intentamos correr
 #¿Cómo podemos resolverlo?
